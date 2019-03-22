@@ -25,7 +25,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Load data from data.csv
-d3.csv("../data/data.csv", function(error, healthData) {
+d3.csv("assets/data/data.csv", function(error, healthData) {
 
     // Throw an error if one occurs
     if (error) throw error;
@@ -118,7 +118,7 @@ d3.csv("../data/data.csv", function(error, healthData) {
         .attr("class", "d3-tip")
         .offset([80, -60])
         .html(function(d) {
-            return (`State: ${d.state}%<br>Poverty: ${d.poverty}%<br>Healthcare:${d.healthcare}`);
+            return (`State: ${d.state}<br>Poverty: ${d.poverty}%<br>Healthcare:${d.healthcare}%`);
         });
     
     // Step 7: Create tooltip in the chart
